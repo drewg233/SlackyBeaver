@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SlackyBeaver_Example' do
+  pod 'SlackyBeaver', :path => '../'
+
+  target 'SlackyBeaver_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
