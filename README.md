@@ -5,11 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/SlackyBeaver.svg?style=flat)](http://cocoapods.org/pods/SlackyBeaver)
 [![Platform](https://img.shields.io/cocoapods/p/SlackyBeaver.svg?style=flat)](http://cocoapods.org/pods/SlackyBeaver)
 
-## Example
+## Description
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+Takes the SwiftyBeaver library and will send a slack message of the logs whenever slacky.error(message) gets called.
 
 ## Installation
 
@@ -19,6 +17,29 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "SlackyBeaver"
 ```
+
+## Usage
+
+Add that near the top of your `AppDelegate.swift` to be able to use SwiftyBeaver in your whole project.
+
+``` Swift
+import SlackyBeaver
+let slacky = SlackyBeaver(slackToken: "YOUR-SLACK-API-TOKEN-HERE", slackChannel: "ios-logs")
+```
+
+Then you can call
+
+``` Swift
+slacky.debug(message: "Here is first log")
+slacky.verbose(message: "Here is second log")
+slacky.info("Here is third log")
+slacky.warning("Here is fourth log")
+slacky.error("This will log, then send the logs to the slack channel")
+```
+
+Upon calling `slacky.error` it will send the logs to the configured slack channel on a background thread.
+
+
 
 ## Author
 
