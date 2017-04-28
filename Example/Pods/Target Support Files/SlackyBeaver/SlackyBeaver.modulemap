@@ -1,0 +1,6 @@
+framework module SlackyBeaver {
+  umbrella header "SlackyBeaver-umbrella.h"
+
+  export *
+  module * { export * }
+}

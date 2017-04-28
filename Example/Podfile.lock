@@ -1,0 +1,19 @@
+PODS:
+  - SlackyBeaver (0.1.0):
+    - SwiftyBeaver
+  - SwiftyBeaver (1.2.1)
+
+DEPENDENCIES:
+  - SlackyBeaver (from `../`)
+
+EXTERNAL SOURCES:
+  SlackyBeaver:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SlackyBeaver: 8b2ca5f880b07e720b58c16d84a3eb974cbf3f21
+  SwiftyBeaver: f29dc64b0ae619d73ee94fd04bd532f895765208
+
+PODFILE CHECKSUM: 1d61effda9d92378c111f8a4e0e3e695f8dfee69
+
+COCOAPODS: 1.2.0
