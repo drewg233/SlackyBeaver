@@ -26,7 +26,7 @@ open class SlackyBeaver: NSObject {
         
         slackClient.setup(slackToken: slackToken)
         
-        file.format = "$DHH:mm:ss.SSS$d $L $N.$F:$l - $M BLAH5"
+        file.format = "$DHH:mm:ss.SSS$d $L $N.$F:$l - $M"
         console.format = "$DHH:mm:ss$d $L $M"
         
         log.addDestination(console)
