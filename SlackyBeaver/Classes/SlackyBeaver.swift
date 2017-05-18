@@ -33,6 +33,13 @@ open class SlackyBeaver: NSObject {
         log.addDestination(file)
     }
     
+    public func deviceInformation() -> Dictionary<String, String> {
+        let systemVersion = UIDevice.current.systemVersion
+        let model = UIDevice.current.model
+        
+        return ["deviceModel": model, "systemVersion": systemVersion]
+    }
+    
     public func debug(message: String) {
         log.debug(message)
     }
@@ -49,7 +56,13 @@ open class SlackyBeaver: NSObject {
         log.warning(message)
     }
     
-    public func error(message: String) {
+    public func error(message: String, otherInformation: Any?) {
+        log.info("******************************************")
+        if otherInformation != nil {
+            log.info(otherInformation)
+        }
+        log.info(deviceInformation)
+        log.info("******************************************")
         log.error(message)
         uploadLogsToSlack()
     }
