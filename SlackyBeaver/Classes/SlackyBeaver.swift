@@ -61,7 +61,8 @@ open class SlackyBeaver: NSObject {
         if otherInformation != nil {
             log.info(otherInformation)
         }
-        log.info(deviceInformation)
+        log.info("Device Information:")
+        log.info(deviceInformation())
         log.info("******************************************")
         log.error(message)
         uploadLogsToSlack()
