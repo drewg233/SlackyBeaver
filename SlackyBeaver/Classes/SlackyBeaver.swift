@@ -56,7 +56,7 @@ open class SlackyBeaver: NSObject {
         log.warning(message)
     }
     
-    public func error(message: String, otherInformation: Any?) {
+    open func error(message: String, otherInformation: Any?) {
         log.info("******************************************")
         if otherInformation != nil {
             log.info(otherInformation)
