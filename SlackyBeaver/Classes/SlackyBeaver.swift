@@ -68,7 +68,7 @@ open class SlackyBeaver: NSObject {
         uploadLogsToSlack()
     }
     
-    func uploadLogsToSlack() {
+    open func uploadLogsToSlack() {
         DispatchQueue.global(qos: .background).async {
             print("This is run on the background queue")
             
