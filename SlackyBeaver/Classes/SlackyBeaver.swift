@@ -40,19 +40,19 @@ open class SlackyBeaver: NSObject {
         return ["deviceModel": model, "systemVersion": systemVersion]
     }
     
-    public func debug(message: String) {
+    open func debug(message: String) {
         log.debug(message)
     }
     
-    public func verbose(message: String) {
+    open func verbose(message: String) {
         log.verbose(message)
     }
     
-    public func info(message: String) {
+    open func info(message: String) {
         log.info(message)
     }
     
-    public func warning(message: String) {
+    open func warning(message: String) {
         log.warning(message)
     }
     
