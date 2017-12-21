@@ -87,7 +87,15 @@ open class SlackyBeaver: NSObject {
         }
     }
     
-    public func manuallySendLogsToSlack(completionHandler: @escaping ((success: Bool, errorMessage: String?)) -> ()) {
+    public func manuallySendLogsToSlack(withMessage: String? = nil, completionHandler: @escaping ((success: Bool, errorMessage: String?)) -> ()) {
+        verbose(message: "---------------------------------------------")
+        verbose(message: "User manually sent logs")
+        if let userMessage = withMessage {
+            verbose(message: "User Message: \(userMessage)")
+        }
+        verbose(message: "---------------------------------------------")
+        sleep(3)
+        
         if let swiftyBeaverFile = self.file.logFileURL {
             let deviceName = UIDevice.current.name + ".log"
             SlackClient.sharedInstance.uploadFile(filePath: swiftyBeaverFile.path, fileName: deviceName, channels: "#\(self.slackChannelString)") { (res, error) in
